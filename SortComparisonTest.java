@@ -11,6 +11,57 @@ import org.junit.runners.JUnit4;
  *
  *  @author
  *  @version HT 2019
+ *  
+ *  **These values are an average of 3 tests of each algorithm for each respective input data**
+ *  
+ *  					| Insert (ns)	| Quick (ns)		| MergeRecursive (ns)	| MergeIterative (ns)	|Selection (ns)		|
+ *  -----------------------------------------------------------------------------------------------------------------------------
+ *  10 Random			|	0.004562	|	0.0034322		|	0.0210974			|	0.0012335				|	0.005702	|	
+ *  -----------------------------------------------------------------------------------------------------------------------------
+ *  100 Random			|	0.117462	| 	0.043343		|	0.0946532			|	0.1186643				|	0.108339	|	
+ *  -----------------------------------------------------------------------------------------------------------------------------
+ *  1000 Random			|	12.710116	|	0.243237		|	1.895645			|	0.9772567				|	6.824193	|
+ *  -----------------------------------------------------------------------------------------------------------------------------
+ *  1000 Few Unique		|	8.379422	|	0.754354		|	0.9148915			|	0.8823453				|	5.608234	|	
+ *  -----------------------------------------------------------------------------------------------------------------------------
+ *  1000 Nearly Ordered	|	10.123389	|	2.535433		|	0.9627898			|	0.8434453				|	5.288635	|
+ *  -----------------------------------------------------------------------------------------------------------------------------
+ *  1000 Reverse Order	|	6.572733	|	6.345334		|	1.0089747			|	0.6983433				|	6.918846	|
+ *  -----------------------------------------------------------------------------------------------------------------------------
+ *  1000 Sorted			|	4.168186	|	7.876555		|	0.9921547			|	0.6437547				|	5.344801	|
+ *  
+ *  a. Which of the sorting algorithms does the order of input have an impact on? Why?
+ *  All of them have some impact but some of them have a larger impact. E.g insertion sort and merge sort can sort 10 random
+ *  quick enough but insertion sort takes over 12.710116ns whereas merge recursive can do it in 1.895645ns
+ *  
+ *  
+	b. Which algorithm has the biggest difference between the best and worst performance, based
+	on the type of input, for the input of size 1000? Why?
+	Insertion sort has the largest difference. it can do the sorted 1000 in 4.168186ns but takes 12.710116ns when it is random, that
+	means it takes 3 times longer when its not sorted
+
+	c. Which algorithm has the best/worst scalability, i.e., the difference in performance time
+	based on the input size? Please consider only input files with random order for this answer.
+	Insertion Sort has the worst scalability, it does the 100 random in 0.117462 which is respectable but it quickly gets worse
+	as for where its 1,000 random its all the way up too 12.710116ns
+	
+	Quick is the best scalability as it sorts 100 random in 0.043343ns and can do 1,000 random in 0.243237ns which is only a small jump
+	
+
+	d. Did you observe any difference between iterative and recursive implementations of merge
+	sort?
+	no,there was very few differences between iterative and  recursive
+
+	e. Which algorithm is the fastest for each of the 7 input files? 
+	10 random - merge iterative
+	100 random - quick sort
+	1000 random - quick sort
+	1000 few unique - quick
+	1000 nearly ordered - merge iterative
+	1000 reverse order - merge iterative
+	1000 sorted - merge iterative
+ *  
+ *  
  */
 @RunWith(JUnit4.class)
 public class SortComparisonTest
