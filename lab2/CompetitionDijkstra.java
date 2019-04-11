@@ -89,7 +89,7 @@ public class CompetitionDijkstra {
 		} catch (Exception e) {
 			longestShortestPath = Double.POSITIVE_INFINITY;
 		}
-	}  
+	} 
 
 	/**
 	 * 
@@ -101,8 +101,8 @@ public class CompetitionDijkstra {
 	public int timeRequiredforCompetition() {
 		if (longestShortestPath == Double.POSITIVE_INFINITY)
 			return -1;
-		//if (longestShortestPath == Double.NEGATIVE_INFINITY)
-		//	return -1;
+		if (longestShortestPath == Double.NEGATIVE_INFINITY)
+			return -1;
 		if (slowSpeed <= 0)
 			return -1;
 		double timeTaken = longestShortestPath * 1000.0 / (slowSpeed);

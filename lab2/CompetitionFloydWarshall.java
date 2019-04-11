@@ -67,7 +67,7 @@ public class CompetitionFloydWarshall {
         } catch (Exception e) {
             allowed = false;
         }
-    }	  	 
+    }	  	
     /**
 	  	
      * @return int: minimum minutes that will pass before the three contestants can meet
