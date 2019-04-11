@@ -1,6 +1,7 @@
-import java.io.File;
+﻿import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
+
 
 /*
  * A Contest to Meet (ACM) is a reality TV contest that sets three contestants at three random
